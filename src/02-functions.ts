@@ -26,7 +26,12 @@ function highestExtension(cs: Colleague[]) {
     return result[cs.length - 1];
   }
 
-function addColleague(cs: Colleague[], newCName: string, newCDept: string, newCEmail: string) {
+function addColleague(
+    cs: Colleague[], 
+    newCName: string, 
+    newCDept: string, 
+    newCEmail: string
+) {
     let highest: number = highestExtension(cs).contact.extension;
     const newColleague: Colleague = {
         name: newCName,
@@ -55,9 +60,9 @@ function sortColleagues(
 addColleague(colleagues.current, "Sheild O Connell", "HR", "soc@here.com");
 // console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
 
-console.log(sortColleagues(colleagues.current, (a, b) => a.contact.extension - b.contact.extension, 2));
-console.log(sortColleagues(colleagues.current, (a, b) => b.name.length - a.name.length, 2));
-console.log(sortColleagues(colleagues.current, (a, b) => a.name.length - b.name.length));
+// console.log(sortColleagues(colleagues.current, (a, b) => a.contact.extension - b.contact.extension, 2));
+// console.log(sortColleagues(colleagues.current, (a, b) => b.name.length - a.name.length, 2));
+// console.log(sortColleagues(colleagues.current, (a, b) => a.name.length - b.name.length));
 
 function findFriends(
     friends: Friend[],
@@ -69,3 +74,11 @@ function findFriends(
 }
 
 // console.log(findFriends(friends, (friend) => friend.age > 28));
+
+function addInterest(friend: Friend, interest: string): string[] {
+    if (friend.interests == undefined) friend.interests = []
+    friend.interests.push(interest);
+    return friend.interests
+}
+
+console.log(addInterest(friends[0], "Jogging"))
