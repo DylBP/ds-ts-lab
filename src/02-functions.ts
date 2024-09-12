@@ -18,9 +18,6 @@ function allOlder(friends: Friend[]) {
     return retVal;
 }
 
-console.log(older(friends[0]))
-console.log(allOlder(friends))
-
 // Find the colleague with the highest extension number.
 function highestExtension(cs: Colleague[]) {
     const result = cs.sort(
@@ -28,7 +25,6 @@ function highestExtension(cs: Colleague[]) {
     );
     return result[cs.length - 1];
   }
-  console.log(highestExtension(colleagues.current));
 
 function addColleague(cs: Colleague[], newCName: string, newCDept: string, newCEmail: string) {
     let highest: number = highestExtension(cs).contact.extension;
@@ -46,17 +42,21 @@ function addColleague(cs: Colleague[], newCName: string, newCDept: string, newCE
 
 function sortColleagues(
     colleagues: Colleague[],
-    sorter: (c1: Colleague, c2: Colleague) => number
+    sorter: (c1: Colleague, c2: Colleague) => number,
+    max?: number
 ): EmailContact[] {
+    let end = colleagues.length;
+    if (max != undefined) end = max < 2 ? 1 : max;
     const sorted = colleagues.sort(sorter);
-    const result: EmailContact[] = sorted.map((ce) => ({ name: ce.name, email: ce.contact.email }));
-    return result
+    const fullResult = sorted.map((ce) => ({ name: ce.name, email: ce.contact.email }));
+    return fullResult.slice(0, end)
 }
 
 addColleague(colleagues.current, "Sheild O Connell", "HR", "soc@here.com");
-console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
+// console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
 
-console.log(sortColleagues(colleagues.current, (a, b) => a.contact.extension - b.contact.extension));
+console.log(sortColleagues(colleagues.current, (a, b) => a.contact.extension - b.contact.extension, 2));
+console.log(sortColleagues(colleagues.current, (a, b) => b.name.length - a.name.length, 2));
 console.log(sortColleagues(colleagues.current, (a, b) => a.name.length - b.name.length));
 
 function findFriends(
@@ -68,4 +68,4 @@ function findFriends(
                 .map((fr) => fr.name);
 }
 
-console.log(findFriends(friends, (friend) => friend.age > 28));
+// console.log(findFriends(friends, (friend) => friend.age > 28));

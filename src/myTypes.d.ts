@@ -3,6 +3,8 @@ export interface Friend {
     name: string;
     phone: string;
     age: number
+    dob?: Date,
+    interests?: string[]
 }
 
 export interface Colleague {
