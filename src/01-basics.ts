@@ -1,53 +1,53 @@
-import {Friend, Colleague, ColleagueHistory} from './myTypes'
+import { Friend, Colleague, ColleagueHistory } from './myTypes'
 
 const friend1: Friend = {
-    name: "Paul Fleming",
-    phone: "087-12345",
-    age: 25,
-    dob: new Date("11-10-1955")
-  };
-  
-  const friend2: Friend = {
-    name: "Jane Costello",
-    phone: "086--12345",
-    age: 31,
-    interests: ["Gaming", "Sleeping", "Crying"]
-  };
-  
-  export const friends: Friend[] = [friend1, friend2];
-  // console.log(friends[1]);
-  
-  //   -------------------
-  const colleague1: Colleague = {
-    name: "Ralph Graham",
-    department: "Engineering",
-    contact: {
-      email: "rgraham@company.com",
-      extension: 121,
-    },
-  };
-  
-  const colleague2: Colleague = {
-    name: "Patti Burke",
-    department: "Finance",
-    contact: {
-      email: "pburke@company.com",
-      extension: 132,
-    },
-  };
-  
-  const colleague3: Colleague = {
-    name: "Dean Sullivan",
-    department: "HR",
-    contact: {
-      email: "dos@company.com",
-      extension: 125,
-    },
-  };
+  name: "Paul Fleming",
+  phone: "087-12345",
+  age: 25,
+  dob: new Date("11-10-1955")
+};
 
-  export const colleagues: ColleagueHistory = {
-    current: [colleague1, colleague2, colleague3],
-    former: [],
-  };
-  
-  // console.log(colleagues.current[0]);
+const friend2: Friend = {
+  name: "Jane Costello",
+  phone: "086--12345",
+  age: 31,
+  interests: ["Gaming", "Sleeping", "Crying"]
+};
+
+export const friends: Friend[] = [friend1, friend2];
+// console.log(friends[1]);
+
+//   -------------------
+const colleague1: Colleague = {
+  name: "Ralph Graham",
+  department: "Engineering",
+  contact: {
+    email: "rgraham@company.com",
+    extension: 121,
+  },
+};
+
+const colleague2: Colleague = {
+  name: "Patti Burke",
+  department: "Finance",
+  contact: {
+    email: "pburke@company.com",
+    extension: 132,
+  },
+};
+
+const colleague3: Colleague = {
+  name: "Dean Sullivan",
+  department: "HR",
+  contact: {
+    email: "dos@company.com",
+    extension: 125,
+  },
+};
+
+export const colleagues: ColleagueHistory = {
+  current: [colleague1, colleague2, colleague3],
+  former: [],
+};
+
+// console.log(colleagues.current[0]);

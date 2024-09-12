@@ -21,29 +21,31 @@ function allOlder(friends: Friend[]) {
 // Find the colleague with the highest extension number.
 function highestExtension(cs: Colleague[]) {
     const result = cs.sort(
-      (c1, c2) => c1.contact.extension - c2.contact.extension
+        (c1, c2) => c1.contact.extension - c2.contact.extension
     );
     return result[cs.length - 1];
-  }
+}
 
 function addColleague(
-    cs: Colleague[], 
-    newCName: string, 
-    newCDept: string, 
+    cs: Colleague[],
+    newCName: string,
+    newCDept: string,
     newCEmail: string
 ) {
     let highest: number = highestExtension(cs).contact.extension;
+
     const newColleague: Colleague = {
         name: newCName,
         department: newCDept,
         contact: {
             email: newCEmail,
-            extension: highest+1
+            extension: highest + 1
         }
     }
+
     cs.push(newColleague);
     return cs;
-} 
+}
 
 function sortColleagues(
     colleagues: Colleague[],
@@ -69,8 +71,8 @@ function findFriends(
     expression: (friend1: Friend) => boolean
 ): string[] {
     return friends
-                .filter(expression)
-                .map((fr) => fr.name);
+        .filter(expression)
+        .map((fr) => fr.name);
 }
 
 // console.log(findFriends(friends, (friend) => friend.age > 28));
