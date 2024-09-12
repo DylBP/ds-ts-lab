@@ -77,4 +77,4 @@ function getBuddyListFriends(list: BuddyList): Friend[] {
     return friends;
 }
 
-console.log(getBuddyListFriends(myFootballBuddies))
+// console.log(getBuddyListFriends(myFootballBuddies))
